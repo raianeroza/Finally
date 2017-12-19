@@ -42,10 +42,10 @@ void mascara(double Masc[N][N])
 	for(i=0; i<N; i++)
 		Masc[N-1][i] = 1.0;
 	
-	for(i=N/4; i<200-(N/4); i++)			//T no meio da matriz
-		Masc[200-(N/4)][i] = 1.0;	
+	for(i=N/4; i<N-(N/4); i++)			//T no meio da matriz
+		Masc[N-(N/4)][i] = 1.0;	
 		
-	for(i=N/4; i<200-(N/4); i++)
+	for(i=N/4; i<N-(N/4); i++)
 		Masc[i][N/2] = 1.0;
 }
 
