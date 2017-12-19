@@ -25,21 +25,16 @@ void potencial(double Masc[N][N], double pot[N][N])
 		pot[N-1][j] = 100;
 	}
 	
-	for(t=0; t<20000; t++)	
-	{		
-		for(i=0; i<N; i++)
-		{
-			for(j=0; j<N; j++)
-			{
-				if(Masc[i][j]==0)
-				{
+	for(t=0; t<20000; t++){		
+		for(i=0; i<N; i++){
+			for(j=0; j<N; j++){
+				if(Masc[i][j]==0){
 					pot[i][j] = (pot[i+1][j] + pot[i-1][j] + pot[i][j+1]+ pot[i][j-1])/ 4.0;	
 				}
 			}
 		}
 	}
 }
-
 void mascara(double Masc[N][N])
 {
 	int i;
@@ -48,15 +43,14 @@ void mascara(double Masc[N][N])
 		Masc[N-1][i] = 1.0;
 	
 	for(i=N/4; i<200-(N/4); i++)			//T no meio da matriz
-		Masc[N/2][i] = 1.0;	
+		Masc[200-(N/4)][i] = 1.0;	
 		
-	for(i=1; i<N/2; i++)
+	for(i=N/4; i<200-(N/4); i++)
 		Masc[i][N/2] = 1.0;
 }
 
 main()
 {	
-
 	double Masc[N][N] = {0}, pot[N][N] = {0};
 	int i, j, t; 
 	
@@ -67,4 +61,3 @@ main()
 	potencial(Masc, pot);
 	imprime(pot);
 }
-	
